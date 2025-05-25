@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: chatApp
+  data:
+    mongodb:
+      enabled: true
+      uri: mongodb://localhost:27017/ChatRecords
+logging:
+  level:
+    org.springframework.data.mongodb.core.MongoTemplate: DEBUG
+
