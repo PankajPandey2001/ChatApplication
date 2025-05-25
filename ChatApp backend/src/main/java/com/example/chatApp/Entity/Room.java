@@ -1,5 +1,6 @@
 package com.example.chatApp.Entity;
 
+import com.example.chatApp.Model.Message;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -14,7 +15,7 @@ public class Room {
     @Id
     String id ;
     String roomId ;
-    List<String> list ;
+    List<Message> list ;
     String roomName ;
 
     public Room(String roomId, String roomName) {
@@ -30,11 +31,11 @@ public class Room {
         this.roomId = roomId;
     }
 
-    public List<String> getList() {
+    public List<Message> getList() {
         return list;
     }
 
-    public void setList(List<String> list) {
+    public void setList(List<Message> list) {
         this.list = list;
     }
 

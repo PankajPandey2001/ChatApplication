@@ -10,6 +10,7 @@ import lombok.*;
 public class RoomDetails {
 
     private  String roomId ;
+    private  String roomName ;
 
     public String getRoomName() {
         return roomName;
@@ -27,5 +28,5 @@ public class RoomDetails {
         this.roomId = roomId;
     }
 
-    private  String roomName ;
 }
+

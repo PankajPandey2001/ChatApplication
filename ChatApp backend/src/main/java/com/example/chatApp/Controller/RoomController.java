@@ -5,10 +5,13 @@ import com.example.chatApp.Entity.Room;
 import com.example.chatApp.Model.RoomDetails;
 import com.example.chatApp.service.RoomService;
 import lombok.Data;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/room")
@@ -49,5 +52,8 @@ public class RoomController {
 
        return ResponseEntity.ok(room1) ;
     }
+
+    @GetMapping("/messages/{roomId}")
+    public ResponseEntity<List<>>
 
 }
