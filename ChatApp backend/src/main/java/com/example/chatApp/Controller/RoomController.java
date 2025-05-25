@@ -2,6 +2,7 @@ package com.example.chatApp.Controller;
 
 
 import com.example.chatApp.Entity.Room;
+import com.example.chatApp.Model.Message;
 import com.example.chatApp.Model.RoomDetails;
 import com.example.chatApp.service.RoomService;
 import lombok.Data;
@@ -48,12 +49,15 @@ public class RoomController {
            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(null) ;
        }
 
-
-
        return ResponseEntity.ok(room1) ;
     }
 
     @GetMapping("/messages/{roomId}")
-    public ResponseEntity<List<>>
+    public ResponseEntity<List<Message>> getMessages(@PathVariable  String roomId)
+    {
+        List<Message> list = roomService.getMessages(roomId) ;
+
+        return ResponseEntity.ok(list) ;
+    }
 
 }
