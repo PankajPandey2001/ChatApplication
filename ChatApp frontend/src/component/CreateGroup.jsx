@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import './CreateGroup.css'
 
 import chatimage from '../assets/chat-image.png'
-
+import { createForm } from '../service/CreateRoom';
+import { toast, ToastContainer } from 'react-toastify';
 
 const CreateGroup = () => {
 
@@ -10,8 +11,29 @@ const CreateGroup = () => {
   const [groupName ,setGroupName] = useState('') ; 
   const [groupId,setGroupId] = useState('') ; 
 
-  const submitForm =()=>{
+  const submitForm = async ()=>{
+      
+     try{
+        const response = await createForm({
+        'roomId' : groupId ,
+        'roomName' : groupName
+      }) ; 
+
+    
+       toast.success('Room created !' , {position: "top-right"}) ; 
+      console.log("room creatd" , response) ; 
+     }
+     catch(error)
+     {
+       toast.error("error in creating form ") ; 
+      console.log(error) ; 
+     }
+
+
       console.log(userName+ " " + groupName + " "+ groupId) ; 
+      setGroupId('') ;
+      setUserName('') ;
+      setGroupName('') ; 
   }
 
   return (
@@ -45,7 +67,8 @@ const CreateGroup = () => {
 
         <button onClick={submitForm}>Create</button>
       </div> 
-
+      
+      <ToastContainer/>
 
     </div>
   )

@@ -16,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/room")
+@CrossOrigin(origins = "*")
 public class RoomController {
 
     private final RoomService roomService ;
@@ -46,7 +47,7 @@ public class RoomController {
 
        if(room1 == null)
        {
-           return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(null) ;
+           return ResponseEntity.status(HttpStatus.CONFLICT).body(null) ;
        }
 
        return ResponseEntity.ok(room1) ;
