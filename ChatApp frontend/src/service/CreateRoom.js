@@ -12,7 +12,7 @@ export async function createForm(userData)
             'Content-Type' : 'application/json'
         }
     })  ; 
-      return response.data ; 
+      return response ; 
     }
     catch(error){
          console.log("this is the error " + error) ; 
@@ -20,3 +20,19 @@ export async function createForm(userData)
     }
 
 }
+
+export async function joinGroup(roomId)
+{
+
+    try{   // await stops the function to wait until the https response comes to go to next line , becuase obviousuly you will
+        // return response only when respone will come from api
+        const response = await axios.get(`${API_BASE_URL}/room/${roomId}`)  ; 
+      return response ; 
+    }
+    catch(error){
+         console.log("this is the error " + error) ; 
+         throw error ; 
+    }
+
+}
+

@@ -21,7 +21,7 @@ const CreateGroup = () => {
 
     
        toast.success('Room created !' , {position: "top-right"}) ; 
-      console.log("room creatd" , response) ; 
+      console.log("room creatd" , response.data) ; 
      }
      catch(error)
      {

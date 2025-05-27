@@ -1,0 +1,62 @@
+.join-group{
+   
+    display: flex;
+
+    flex-direction: column ;
+
+
+    justify-content: center;
+    align-items: center;
+}
+.join-group img{
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+
+}
+.join-form{
+
+    margin-left: 10rem;
+    display: flex;
+    flex-direction: column;
+    
+    width: 40vw;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.join-form-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2px;
+}
+
+.join-form-child input{
+    width: 30vw;
+    height: 1.3rem;
+}
+
+
+.join-form button{
+
+    width: 5rem;
+    height: 3rem;
+    margin-left: 12rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    background-color: white;
+
+}
+
+
+.join-form button:hover{
+
+    transform: scale(1.2);
+    background-color: rgb(21, 141, 221);
+    transition: transform 0.3s ease;
+
+
+}

@@ -15,7 +15,7 @@ const Home = () => {
       <div className='dir-button'>
          <button onClick={()=>{navigate('/create')}}>Create Room </button>
 
-        <button> Join room </button>
+        <button onClick={()=>{navigate('/join')}}> Join room </button>
 
       </div>
 
